@@ -1,0 +1,38 @@
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+
+<div class="">
+		<div class="mr-sm-2 mb-2 col-sm-8" style="margin: 10px;">
+			<form action="{{ url_for('editGame',gfid=gfid,gfename=gamedetails.gamename)}}" method="POST">
+				<div class="panel panel-info">
+				  <div class="panel-heading" style="background-color:#ff6600;color:white">Edit Game Details</div>
+				  <div class="panel-body">
+				  	
+					  <div class="form-group">
+					  	<label class="text-primary" for="gamename">Enter Game Name:</label>
+					    <input type="name" class="form-control" name="gamename" value="{{gamedetails.gamename}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="launchyear">Enter Year Of Launch:</label>
+					    <input type="text" class="form-control" name="launchyear" value="{{gamedetails.launchyear}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="rating">Enter Game ratings:</label>
+					    <input type="text" class="form-control" name="rating" value="{{gamedetails.ratings}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="price">Enter Price:</label>
+					    <input type="text" class="form-control" name="price" value="{{gamedetails.price}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="gametype">Enter Game Type:</label>
+					    <input type="text" class="form-control" name="gametype" value="{{gamedetails.gametype}}">
+					  </div>					  
+				  </div> 
+				  <div class="panel-footer text-center"><input type="submit" class="btn btn-primary" value="Edit"></div>
+				</div>
+				</form>
+			</div>
+</div>
+{% endblock content %}
